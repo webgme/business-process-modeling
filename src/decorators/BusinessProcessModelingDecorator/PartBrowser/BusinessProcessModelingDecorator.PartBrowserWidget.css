@@ -1,0 +1,57 @@
+/*
+ * Copyright (C) 2013-2014 Vanderbilt University, All rights reserved.
+ * 
+ * Author:
+ * Peng Zhang
+ */
+.businessprocessmodeling-decorator {
+  text-align: center; }
+  .businessprocessmodeling-decorator text.port-name {
+    fill: #000;
+    font-size: 11px; }
+    .businessprocessmodeling-decorator text.port-name.right {
+      text-anchor: end; }
+  .businessprocessmodeling-decorator .description {
+    position: absolute;
+    z-index: 10;
+    margin-top: 1px;
+    width: 90px;
+    height: 65px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 3px; }
+  .businessprocessmodeling-decorator .name {
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; }
+  .businessprocessmodeling-decorator .connector {
+    background-color: #FEFEFE;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid #0000FF;
+    z-index: 10;
+    border-radius: 0px;
+    left: 50%; }
+    .businessprocessmodeling-decorator .connector:hover {
+      border-color: rgba(82, 168, 236, 0.8);
+      -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6); }
+    .businessprocessmodeling-decorator .connector.top {
+      top: -6px; }
+    .businessprocessmodeling-decorator .connector.bottom {
+      bottom: -6px; }
+  .businessprocessmodeling-decorator .connector-container {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0; }
+
+.designer-item.selected .businessprocessmodeling-decorator {
+  background-color: rgba(219, 234, 252, 0.5); }

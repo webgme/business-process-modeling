@@ -8,6 +8,8 @@ var config = require('webgme/config/config.default'),
 
 
 // The paths can be loaded from the webgme-setup.json
+config.visualization.decoratorPaths.push('src/decorators');
+config.seedProjects.basePaths.push('src/seeds/BusinessProcessModeling');
 
 
 // Visualizer descriptors
@@ -16,6 +18,6 @@ var config = require('webgme/config/config.default'),
 
 
 
-config.mongo.uri = 'mongodb://127.0.0.1:27017/multi';
+config.mongo.uri = 'mongodb://127.0.0.1:27017/webgme_business_process_modeling';
 validateConfig(config);
 module.exports = config;

@@ -1,0 +1,12 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <rect transform="rotate(45 25 25)" id="svg_6" height="34" width="34" y="8" x="8" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="#ffff00"/>
+  <ellipse ry="15" rx="15" id="svg_10" cy="25" cx="25" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="none"/>
+  <path id="svg_3" d="m22.749538,20.68708" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="#fff"/>
+  <path stroke="#000" id="svg_2" d="m13.687498,23.19026l9.312502,0l0,-10.50242l4,0l0,10.41337c2.63117,0 6.743629,0 9.374802,0l0,3.797581c-2.791603,0 -6.583202,0 -9.374802,0l0,10.41337l-4,0c0,-3.441441 0,-6.88287 0,-10.32431l-9.374802,0c0.0208,-1.285681 0.04151,-2.512011 0.0623,-3.79759z" fill="#fff"/>
+  <path id="svg_4" d="m22.531301,17.749641" opacity="0.5" fill-opacity="null" stroke-opacity="null" stroke="#000" fill="#fff"/>
+  <path id="svg_5" d="m18.468884,19.499605" opacity="0.5" stroke-opacity="null" stroke-width="null" stroke="#000" fill="#000000"/>
+ </g>
+</svg>

@@ -1,0 +1,86 @@
+//
+// Copyright (C) 2013-2014 Vanderbilt University, All rights reserved.
+// 
+// Author: 
+// Peng Zhang
+//
+
+//imports
+
+@import "Connector.scss";
+
+$selected-background-color: rgba(219, 234, 252, 0.5);
+$width: 90px;
+$height: 65px;
+
+@mixin BusinessProcessModeling_decorator_core {
+  .businessprocessmodeling-decorator {
+    text-align: center;
+
+    text.port-name {
+      fill: #000;
+      font-size: 11px; 
+
+      &.right {
+        text-anchor: end;
+      }
+    }
+
+    .description {
+      position: absolute;
+      z-index: 10;
+      margin-top: 1px;
+      width: $width;
+      height: $height;    
+      word-wrap: break-word; 
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-top: 3px;
+      //line-height: 1;
+
+    }
+    .name {
+      text-align: center;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .connector {
+      @include connector_basics;
+
+      border-radius: 0px;
+
+
+      //margin-left: $connector-size / -2;
+      left: 50%;
+
+      &.top {
+        top: $connector-size / -2;
+      }
+
+      &.bottom {
+        bottom: $connector-size / -2;
+      }
+
+    }
+
+    .connector-container {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+      -moz-transform-origin: 0 0;
+    }
+
+  }
+
+  .designer-item {
+    &.selected {
+      .businessprocessmodeling-decorator {
+        background-color: $selected-background-color;
+      }
+    }
+  }
+}

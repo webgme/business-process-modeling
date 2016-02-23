@@ -1,8 +1,18 @@
 {
   "components": {
-    "seeds": {}
+    "seeds": {
+      "BusinessProcessModeling": {
+        "src": "src/seeds/BusinessProcessModeling"
+      }
+    },
+    "decorators": {
+      "BusinessProcessModelingDecorator": {
+        "src": "src/decorators/BusinessProcessModelingDecorator"
+      }
+    }
   },
   "dependencies": {
-    "seeds": {}
+    "seeds": {},
+    "decorators": {}
   }
 }

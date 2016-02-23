@@ -1,0 +1,10 @@
+<svg width="50" height="50" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <rect fill="#ffff00" stroke="#000" stroke-opacity="null" fill-opacity="null" x="8" y="8" width="34" height="34" id="svg_6" transform="rotate(45 25 25)"/>
+  <ellipse fill="none" stroke="#000" stroke-opacity="null" fill-opacity="null" cx="25" cy="25" id="svg_9" rx="15" ry="15"/>
+  <ellipse fill="none" stroke="#000" stroke-opacity="null" fill-opacity="null" cx="25" cy="25" id="svg_10" rx="13" ry="13"/>
+  <path stroke="#000" id="svg_2" d="m13.416878,21.707661l11.583149,-7.957453l11.583096,7.957453l-4.424328,12.875496l-14.31757,0l-4.424347,-12.875496z" fill="#fff"/>
+ </g>
+</svg>
