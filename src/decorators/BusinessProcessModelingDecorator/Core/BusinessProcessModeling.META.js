@@ -47,6 +47,30 @@ define(['underscore'], function (_underscore) {
             'Task': 'Task',
             'Transaction': 'Transaction'
         },
+        DecoredMETATypes = {
+            'Annotation': 'Annotation',
+            'BPMFolder': 'BPMFolder',
+            'BPMMetaLanguage': 'BPMMetaLanguage',
+            'BPModel': 'BPModel',
+            'CallActivity': 'CallActivity',
+            'Complex': 'Complex',
+            'DataObject': 'DataObject',
+            'EndEvent': 'EndEvent',
+            'EventBased': 'EventBased',
+            'Exclusive': 'Exclusive',
+            'ExclusiveEventBased': 'ExclusiveEventBased',
+            'Group': 'Group',
+            'Inclusive': 'Inclusive',
+            'IntermediateEvent': 'IntermediateEvent',
+            'Lane': 'Lane',
+            'Parallel': 'Parallel',
+            'ParallelEventBased': 'ParallelEventBased',
+            'Pool': 'Pool',
+            'StartEvent': 'StartEvent',
+            'SubProcess': 'SubProcess',
+            'Task': 'Task',
+            'Transaction': 'Transaction'
+        },
         client = WebGMEGlobal.Client;
 
     function _getMetaTypes() {
@@ -58,6 +82,21 @@ define(['underscore'], function (_underscore) {
         for (i = 0; i < metaNodes.length; i += 1) {
             name = metaNodes[i].getAttribute('name');
             if (META_TYPES[name]) {
+                dictionary[name] = metaNodes[i].getId();
+            }
+        }
+
+        return dictionary;
+    }
+    function _getDecoredMetaTypes() {
+        var metaNodes = client.getAllMetaNodes(),
+            dictionary = {},
+            i,
+            name;
+
+        for (i = 0; i < metaNodes.length; i += 1) {
+            name = metaNodes[i].getAttribute('name');
+            if (DecoredMETATypes[name]) {
                 dictionary[name] = metaNodes[i].getId();
             }
         }
@@ -121,6 +160,7 @@ define(['underscore'], function (_underscore) {
     return {
         getMetaTypes: _getMetaTypes,
         getMetaTypesOf: _getMetaTypesOf,
+        getDecoredMetaTypes: _getDecoredMetaTypes,
         TYPE_INFO: {
 			isActivity: _isActivity,
 			isAnnotation: _isAnnotation,

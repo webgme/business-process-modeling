@@ -46,39 +46,6 @@ define(['js/Constants',
     var errorSVGBase = $(DefaultSvgTemplate);
 
     /**
-     * ID list of meta types.
-     * @type {*}
-     * @private
-     */
-    if(Object.keys(svgCache || {}).length === 0){
-        var _metaAspectTypes = BusinessProcessModelingMETA.getMetaTypes();
-
-        for (var m in _metaAspectTypes) {
-
-            if (_metaAspectTypes.hasOwnProperty(m)) {
-
-                // get the svg's url on the server for this META type
-                var svg_resource_url = SVG_ICON_PATH + m + ".svg";
-
-                // get the svg from the server in SYNC mode, may take some time
-                $.ajax(svg_resource_url, {'async': false})
-                    .done(function (data) {
-
-                        // TODO: console.debug('Successfully downloaded: ' + svg_resource_url + ' for ' + metaType);
-                        // downloaded successfully
-                        // cache the downloaded content
-                        svgCache[m] = $(data.childNodes[0]);
-                    })
-                    .fail(function () {
-
-                        // download failed for this type
-                        // TODO: console.warning('Failed to download: ' + svg_resource_url);
-                    });
-            }
-        }
-    }
-
-    /**
      * Creates a new instance of BusinessProcessModelingDecoratorCore.
      * @constructor
      */
@@ -118,6 +85,43 @@ define(['js/Constants',
         if (params && params.connectors) {
             this._displayConnectors = params.connectors;
         }
+
+
+
+        /**
+         * ID list of meta types.
+         * @type {*}
+         * @private
+         */
+        if(Object.keys(svgCache || {}).length === 0){
+            var _metaAspectTypes = BusinessProcessModelingMETA.getDecoredMetaTypes();
+
+            for (var m in _metaAspectTypes) {
+
+                if (_metaAspectTypes.hasOwnProperty(m)) {
+
+                    // get the svg's url on the server for this META type
+                    var svg_resource_url = SVG_ICON_PATH + m + ".svg";
+
+                    // get the svg from the server in SYNC mode, may take some time
+                    $.ajax(svg_resource_url, {'async': false})
+                        .done(function (data) {
+
+                            // TODO: console.debug('Successfully downloaded: ' + svg_resource_url + ' for ' + metaType);
+                            // downloaded successfully
+                            // cache the downloaded content
+                            svgCache[m] = $(data.childNodes[0]);
+                        })
+                        .fail(function () {
+
+                            // download failed for this type
+                            // TODO: console.warning('Failed to download: ' + svg_resource_url);
+                        });
+                }
+            }
+        }
+
+
     };
 
     /**
@@ -349,8 +353,9 @@ define(['js/Constants',
         // initialize local variables
         var control = this._control,
             gmeID = this._metaInfo[CONSTANTS.GME_ID],
-            name = (control._client.getNode(gmeID)).getAttribute(nodePropertyNames.Attributes.name),
-            desc = control._client.getNode(gmeID).getAttribute(BPMDConstants.DESC),    
+            node = control._client.getNode(gmeID),
+            name = node ? node.getAttribute(nodePropertyNames.Attributes.name) : '',
+            desc = node ? node.getAttribute(BPMDConstants.DESC) : '',
             META_TYPES = BusinessProcessModelingMETA.getMetaTypes(),
             isTypeConditional = BusinessProcessModelingMETA.TYPE_INFO.isConditional(gmeID),
             isTypeIntermediateEvent = BusinessProcessModelingMETA.TYPE_INFO.isIntermediateEvent(gmeID),
