@@ -1,5 +1,5 @@
 {
-  "name": "webgme-business-process-modeling",
+  "name": "business-process-modeling",
   "scripts": {
     "start": "node app.js",
     "test": "node ./node_modules/mocha/bin/mocha --recursive test"
