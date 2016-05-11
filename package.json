@@ -6,7 +6,7 @@
   },
   "version": "1.0.0",
   "peerDependencies": {
-    "webgme": "1.7"
+    "webgme": "2.x"
   },
   "dependencies": {
   },
