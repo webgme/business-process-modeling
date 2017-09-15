@@ -110,7 +110,7 @@ define(['underscore'], function (_underscore) {
             result = [];
 
         for (i = 0; i < orderedMetaList.length; i += 1) {
-            if (client.isTypeOf(objId, metaDictionary[orderedMetaList[i]])) {
+            if (safeTypeCheck(objId, metaDictionary[orderedMetaList[i]])) {
                 result.push(orderedMetaList[i]);
             }
         }
