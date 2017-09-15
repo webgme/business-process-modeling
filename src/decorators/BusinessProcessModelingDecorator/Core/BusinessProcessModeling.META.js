@@ -118,42 +118,50 @@ define(['underscore'], function (_underscore) {
         return result;
     }
 
+    function safeTypeCheck(id, metaId) {
+        if (typeof metaId === 'string') {
+            return client.isTypeOf(id, metaId);
+        } else {
+            return false;
+        }
+    }
+
     //META ASPECT TYPE CHECKING
-    var _isActivity = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Activity]);};
-	var _isAnnotation = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Annotation]);};
-	var _isArtifact = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Artifact]);};
-	var _isArtifact2Activity = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Artifact2Activity]);};
-	var _isBPMFolder = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.BPMFolder]);};
-	var _isBPMMetaLanguage = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.BPMMetaLanguage]);};
-	var _isBPModel = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.BPModel]);};
-	var _isCallActivity = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.CallActivity]);};
-	var _isComplex = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Complex]);};
-	var _isConditional = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Conditional]);};
-	var _isConnectionBase = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.ConnectionBase]);};
-	var _isDataObject = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.DataObject]);};
-	var _isEndEvent = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.EndEvent]);};
-	var _isEvent = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Event]);};
-	var _isEventBased = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.EventBased]);};
-	var _isEvent_Activity = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Event_Activity]);};
-	var _isExclusive = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Exclusive]);};
-	var _isExclusiveEventBased = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.ExclusiveEventBased]);};
-	var _isFCO = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.FCO]);};
-	var _isGateway = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Gateway]);};
-	var _isGateway2Event = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Gateway2Event]);};
-	var _isGateway_Activity = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Gateway_Activity]);};
-	var _isGroup = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Group]);};
-	var _isInclusive = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Inclusive]);};
-	var _isIntermediate2Gateway = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Intermediate2Gateway]);};
-	var _isIntermediateEvent = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.IntermediateEvent]);};
-	var _isLane = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Lane]);};
-	var _isParallel = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Parallel]);};
-	var _isParallelEventBased = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.ParallelEventBased]);};
-	var _isPool = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Pool]);};
-	var _isSequential = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Sequential]);};
-	var _isStartEvent = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.StartEvent]);};
-	var _isSubProcess = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.SubProcess]);};
-	var _isTask = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Task]);};
-	var _isTransaction = function (objID) { return client.isTypeOf(objID, _getMetaTypes()[META_TYPES.Transaction]);};
+    var _isActivity = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Activity]);};
+	var _isAnnotation = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Annotation]);};
+	var _isArtifact = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Artifact]);};
+	var _isArtifact2Activity = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Artifact2Activity]);};
+	var _isBPMFolder = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.BPMFolder]);};
+	var _isBPMMetaLanguage = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.BPMMetaLanguage]);};
+	var _isBPModel = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.BPModel]);};
+	var _isCallActivity = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.CallActivity]);};
+	var _isComplex = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Complex]);};
+	var _isConditional = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Conditional]);};
+	var _isConnectionBase = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.ConnectionBase]);};
+	var _isDataObject = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.DataObject]);};
+	var _isEndEvent = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.EndEvent]);};
+	var _isEvent = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Event]);};
+	var _isEventBased = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.EventBased]);};
+	var _isEvent_Activity = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Event_Activity]);};
+	var _isExclusive = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Exclusive]);};
+	var _isExclusiveEventBased = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.ExclusiveEventBased]);};
+	var _isFCO = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.FCO]);};
+	var _isGateway = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Gateway]);};
+	var _isGateway2Event = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Gateway2Event]);};
+	var _isGateway_Activity = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Gateway_Activity]);};
+	var _isGroup = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Group]);};
+	var _isInclusive = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Inclusive]);};
+	var _isIntermediate2Gateway = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Intermediate2Gateway]);};
+	var _isIntermediateEvent = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.IntermediateEvent]);};
+	var _isLane = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Lane]);};
+	var _isParallel = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Parallel]);};
+	var _isParallelEventBased = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.ParallelEventBased]);};
+	var _isPool = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Pool]);};
+	var _isSequential = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Sequential]);};
+	var _isStartEvent = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.StartEvent]);};
+	var _isSubProcess = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.SubProcess]);};
+	var _isTask = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Task]);};
+	var _isTransaction = function (objID) { return safeTypeCheck(objID, _getMetaTypes()[META_TYPES.Transaction]);};
 	
 
     //return utility functions
